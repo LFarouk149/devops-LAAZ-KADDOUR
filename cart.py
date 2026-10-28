@@ -9,3 +9,5 @@ def total(prices):
 
 def apply_discount(prices,percent):
     return [p *(1-percent/100)for p in prices]
+def count(prices):
+    return len(prices)
