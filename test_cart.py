@@ -1,4 +1,6 @@
 # Tests coming in lab 2
+from stats import most_expensive
+
 import pytest
 def test_discount_over_100_is_refused():
     with pytest.raises(ValueError):
@@ -24,3 +26,9 @@ def test_shipping_big_cart():
 
 def test_shipping_free_from_50():
    assert shipping([50]) == 0
+
+def test_most_expensive():
+    assert most_expensive([10, 50, 20]) == 50
+
+def test_most_expensive_empty_cart():
+    assert most_expensive([]) is None   
