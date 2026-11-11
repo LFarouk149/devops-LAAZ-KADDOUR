@@ -1,11 +1,15 @@
 # Tests coming in lab 2
+import pytest
+
 from stats import most_expensive
 
-import pytest
+
 def test_discount_over_100_is_refused():
     with pytest.raises(ValueError):
         apply_discount([100], 150)
-from cart import average, total, apply_discount , shipping
+from cart import apply_discount, average, shipping, total
+
+
 def test_average():
    assert average([10, 20]) == 15
 def test_average_empty_cart():
