@@ -1,3 +1,4 @@
+![CI](https://github.com/LFarouk149/devops-LAAZ-KADDOUR/actions/workflows/ci.yml/badge.svg)
 <<<<<<< HEAD
 # Shop modif farouk
 =======
