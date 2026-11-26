@@ -43,3 +43,12 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t shop:${{ github.sha }} .
+      - run: docker run -d -p 8000:8000 shop:${{ github.sha }}
+      - run: sleep 2 && curl --fail --retry 10 --retry-connrefused --retry-delay 1 http://localhost:8000/health
