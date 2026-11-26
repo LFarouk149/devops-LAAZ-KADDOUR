@@ -8,6 +8,11 @@ services:
       VERSION: compose
     depends_on:
       - redis
-
   redis:
     image: redis:7.4
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
